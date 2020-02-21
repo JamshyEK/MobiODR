@@ -13,7 +13,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.loginlayout);
 
         ed1=findViewById(R.id.username);
-        ed1.setHint("test");
+        ed1.setHint("test1");
     }
 
 }
