@@ -1,5 +1,6 @@
 package com.example.mobiodr;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,10 +30,20 @@ public class LoginActivity extends AppCompatActivity {
 
                 String user = editText1.getText().toString();
                 String pass = editText2.getText().toString();
-                if(user.equals("aaa") && pass.equals("aaa")){
-
-                    Toast toast=Toast.makeText(getApplicationContext(),"Login Success",Toast.LENGTH_SHORT);
+                if(user.equals("jamshy") && pass.equals("jamshy")){
+                    Intent intent=new Intent(LoginActivity.this,OrderActivity.class);
+                    editText1.setText("");
+                    editText2.setText("");
+                    editText2.clearFocus();
+                    startActivity(intent);
+                }else {
+                    Toast toast=Toast.makeText(getApplicationContext(),"Incorrect Username & Password",Toast.LENGTH_SHORT);
                     toast.show();
+                    editText1.setText("");
+                    editText2.setText("");
+                    editText2.clearFocus();
+
+
                 }
 
             }
