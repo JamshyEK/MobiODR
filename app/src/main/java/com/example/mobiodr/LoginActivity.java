@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
                 String user = editText1.getText().toString();
                 String pass = editText2.getText().toString();
                 if(user.equals("jamshy") && pass.equals("jamshy")){
-                    Intent intent=new Intent(LoginActivity.this,OrderActivity.class);
+                    Intent intent=new Intent(LoginActivity.this,NavActivity.class);
                     editText1.setText("");
                     editText2.setText("");
                     editText2.clearFocus();

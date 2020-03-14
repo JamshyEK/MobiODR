@@ -14,6 +14,8 @@ public class FlashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.flashscreen);
 
+        new DbManager(this);
+
 
 
         TimerTask task =new TimerTask() {
