@@ -1,6 +1,7 @@
 package com.example.mobiodr.ui.home;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,8 @@ import androidx.fragment.app.Fragment;
 
 import com.example.mobiodr.DbManager;
 import com.example.mobiodr.R;
+import com.example.mobiodr.UpdateOrder;
+import com.example.mobiodr.ui.slideshow.SlideshowFragment;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -79,7 +82,7 @@ public class HomeFragment extends Fragment {
                 String color=spinnercolor.getSelectedItem().toString();
 
                 Date c = Calendar.getInstance().getTime();
-                SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+                SimpleDateFormat df = new SimpleDateFormat("YYYY-MM-dd");
                 String formattedDate = df.format(c);
 
                 DbManager db=new DbManager(getContext());
@@ -93,6 +96,7 @@ public class HomeFragment extends Fragment {
                     Toast.makeText(getActivity(), res, Toast.LENGTH_SHORT).show();
                     reset();
                 }
+
             }
         });
 
@@ -124,5 +128,8 @@ public class HomeFragment extends Fragment {
         edtmobno.clearFocus();
         edtphone.clearFocus();
         edtdtls.clearFocus();
+
+
+
     }
 }

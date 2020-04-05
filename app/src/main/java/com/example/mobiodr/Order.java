@@ -19,7 +19,7 @@ public class Order {
     }
 
 
-    public Order(){
+    public Order(int price, int sell_price){
 
     }
 

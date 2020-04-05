@@ -46,6 +46,38 @@ public class DbManager extends SQLiteOpenHelper {
             return "Order Success";
     }
 
+
+    public String updaterecord(String str1,String str2,String str3){
+        SQLiteDatabase db=this.getWritableDatabase();
+        ContentValues cv= new ContentValues();
+        int id=Integer.parseInt(str1);
+
+        int  price = 0;
+        int sell_price = 0;
+
+        if(str2.equals("") && str3.equals("")){
+            sell_price=0;
+            price=0;
+        }else {
+            if (str2.equals("")) {
+                sell_price = sell_price + Integer.parseInt(str3);
+            } else if (str3.equals("")) {
+                price = price + Integer.parseInt(str2);
+            } else {
+                price = price + Integer.parseInt(str2);
+                sell_price = sell_price + Integer.parseInt(str3);
+            }
+        }
+
+        cv.put("price",price);
+        cv.put("sell_price",sell_price);
+        long res=db.update("order_tbl",cv, "cus_id="+id, null);
+        if(res==-1)
+            return "Update failed";
+        else
+            return "Update Success";
+    }
+
  /*   public String[] getdata() {
 
         final String TABLE_NAME = "order_tbl";
@@ -81,8 +113,8 @@ public class DbManager extends SQLiteOpenHelper {
 
 
  public  ArrayList<Order> getAllData(){
-     final String TABLE_NAME = "order_tbl";
-     String selectQuery = "SELECT  * FROM " + TABLE_NAME;
+    // final String TABLE_NAME = "order_tbl";
+     String selectQuery = "SELECT  * FROM order_tbl ORDER BY cus_id DESC";   /* + TABLE_NAME;*/
      ArrayList<Order> arrayList = new ArrayList<>();
      SQLiteDatabase db  = this.getReadableDatabase();
      Cursor cursor=db.rawQuery(selectQuery,null);
@@ -101,8 +133,33 @@ public class DbManager extends SQLiteOpenHelper {
          arrayList.add(order);
      }
      return arrayList;
-
-
-
  }
+
+
+public ArrayList<ListId> getdata(String startdate,String enddate){
+   // String selectQuery = "SELECT  * FROM order_tbl ORDER BY cus_id DESC";
+    String selectQuery = "SELECT * FROM order_tbl WHERE date >= '" +startdate+ "' AND date <= '" +enddate+ "'";
+   // String selectQuery = "SELECT * FROM  order_tbl WHERE date BETWEEN '" + startdate + "' AND '" + enddate + "'";
+    ArrayList<ListId> arrayList = new ArrayList<>();
+    SQLiteDatabase db  = this.getReadableDatabase();
+    Cursor cursor=db.rawQuery(selectQuery,null);
+    while (cursor.moveToNext()){
+/*        int id=cursor.getInt(0);
+        String name =cursor.getString(1);
+        String mob_no =cursor.getString(2);
+        String product =cursor.getString(3);
+        String color =cursor.getString(4);
+        String phone_model =cursor.getString(5);
+        String details =cursor.getString(6);*/
+        String date =cursor.getString(7);
+        int price =cursor.getInt(8);
+        int sell_price =cursor.getInt(9);
+        ListId listId = new ListId(price,sell_price,date);
+        arrayList.add(listId);
+    }
+    return arrayList;
+}
+
+
+
 }

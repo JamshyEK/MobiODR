@@ -109,6 +109,7 @@
         android:ems="10"
         android:gravity="start|top"
         android:hint="Details"
+        android:maxLines="2"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

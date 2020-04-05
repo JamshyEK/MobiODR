@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateOrder">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="183dp"
+        android:layout_height="160dp"
+        app:layout_constraintBottom_toTopOf="@+id/name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:text="Name"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/product"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/name" />
+
+    <EditText
+
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="35dp"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/hintedttxt"
+        android:textColorLink="@color/button"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/product_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:text="Product"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <EditText
+        android:id="@+id/product"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/hintedttxt"
+        android:textColorLink="@color/button"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <TextView
+        android:id="@+id/color_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:text="Color"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product" />
+
+    <EditText
+        android:id="@+id/color"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/hintedttxt"
+        android:textColorLink="@color/button"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product" />
+
+    <TextView
+        android:id="@+id/phone_model_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:text="Phone model"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/phone_model"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/phone_model" />
+
+    <EditText
+        android:id="@+id/phone_model"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/hintedttxt"
+        android:textColorLink="@color/button"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/color" />
+
+    <TextView
+        android:id="@+id/mob_no_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:text="Mob no"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/mob_no"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone_model" />
+
+    <EditText
+        android:id="@+id/mob_no"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/hintedttxt"
+        android:textColorLink="@color/button"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone_model" />
+
+    <TextView
+        android:id="@+id/order_date_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:text="Order date"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/order_date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mob_no" />
+
+    <EditText
+        android:id="@+id/order_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:inputType="date"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/hintedttxt"
+        android:textColorLink="@color/button"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mob_no" />
+
+    <TextView
+        android:id="@+id/details_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:text="Details"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/details"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/order_date" />
+
+    <EditText
+        android:id="@+id/details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:inputType="textMultiLine"
+        android:maxLines="2"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/hintedttxt"
+        android:textColorLink="@color/button"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/order_date" />
+
+    <TextView
+        android:id="@+id/price_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:text="Price"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/price"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/details" />
+
+    <EditText
+        android:id="@+id/price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:inputType="number|textPersonName"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/hintedttxt"
+        android:textColorLink="@color/button"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/details" />
+
+    <TextView
+        android:id="@+id/sell_price_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:text="Sell price"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/sell_price"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/price" />
+
+    <EditText
+        android:id="@+id/sell_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:inputType="number|textPersonName"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/hintedttxt"
+        android:textColorLink="@color/button"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/price" />
+
+    <Button
+        android:id="@+id/update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorPrimaryDark2"
+        android:text="UPDATE"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginBottom="10dp"
+        android:background="#F44336"
+        android:text="RESET"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

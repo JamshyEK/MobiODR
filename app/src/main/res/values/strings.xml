@@ -20,6 +20,7 @@
     <string name="menu_new_order">New Order</string>
     <string name="menu_orders">Orders</string>
     <string name="head_form">Order Form</string>
+    <string name="menu_graph">Graph</string>
 
     <string name="title_activity_nav">NavActivity</string>
 
@@ -40,7 +41,7 @@
         <item>Pink</item>
         <item>Violet</item>
         <item>Silver</item>
-        <item>Grey</item>
+        <item>Gray</item>
         <item>Other</item>
     </string-array>
 

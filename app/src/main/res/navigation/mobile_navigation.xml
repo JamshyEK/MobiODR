@@ -20,7 +20,7 @@
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.mobiodr.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/menu_graph"
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment

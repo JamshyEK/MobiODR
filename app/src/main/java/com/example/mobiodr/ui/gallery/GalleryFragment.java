@@ -1,25 +1,23 @@
 package com.example.mobiodr.ui.gallery;
 
-import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
+import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 
 import com.example.mobiodr.DbManager;
+import com.example.mobiodr.ListId;
 import com.example.mobiodr.MyAdapter;
 import com.example.mobiodr.Order;
 import com.example.mobiodr.R;
+import com.example.mobiodr.UpdateOrder;
 
 import java.util.ArrayList;
 
@@ -54,6 +52,55 @@ public class GalleryFragment extends Fragment {
 
        // lv.setAdapter((ListAdapter) res);
         /*db.getdata();*/
+
+        //lv.setClickable(true);
+
+
+
+
+
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
+                   /*Object object= new Object();
+                     object = lv.getItemAtPosition(position);*/
+                   //ListId listId=new ListId(33,500,900,"aaa","eeee","dsdsdsd","sdsd","dsdsdds","sdasd","dasd");
+                Order itemdtls = arrayList.get(position);
+                int id = itemdtls.getId();
+                int price = itemdtls.getPrice();
+                int sell_price = itemdtls.getSell_price();
+
+                String name =itemdtls.getName();
+                String mob_no =itemdtls.getMob_no();
+                String product =itemdtls.getProduct();
+                String color =itemdtls.getColor();
+                String phone_model =itemdtls.getPhone_model();
+                String details =itemdtls.getDetails();
+                String date =itemdtls.getDate();
+
+
+
+
+
+                Intent intent=new Intent(getContext(),UpdateOrder.class);
+                intent.putExtra("id",id);
+                intent.putExtra("price",price);
+                intent.putExtra("sell_price",sell_price);
+                intent.putExtra("name",name);
+                intent.putExtra("mob_no",mob_no);
+                intent.putExtra("product",product);
+                intent.putExtra("color",color);
+                intent.putExtra("phone_model",phone_model);
+                intent.putExtra("details",details);
+                intent.putExtra("date",date);
+
+
+                startActivity(intent);
+               // String str=(String)o;//As you are using Default String Adapter
+            }
+        });
 
     }
 

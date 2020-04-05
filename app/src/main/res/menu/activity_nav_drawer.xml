@@ -5,6 +5,10 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/linechart"
+            android:title="@string/menu_graph" />
+        <item
             android:id="@+id/nav_home"
             android:icon="@drawable/addd"
             android:title="@string/menu_new_order" />
@@ -12,14 +16,10 @@
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ord"
             android:title="@string/menu_orders" />
-       <!-- <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
-        <item
-            android:id="@+id/nav_tools"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_tools" />-->
+        <!--  <item
+              android:id="@+id/nav_tools"
+              android:icon="@drawable/ic_menu_manage"
+              android:title="@string/menu_tools" />-->
     </group>
 
 <!--
