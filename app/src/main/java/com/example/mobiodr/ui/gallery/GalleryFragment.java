@@ -13,7 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.mobiodr.DbManager;
-import com.example.mobiodr.ListId;
 import com.example.mobiodr.MyAdapter;
 import com.example.mobiodr.Order;
 import com.example.mobiodr.R;
@@ -34,11 +33,11 @@ public class GalleryFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        DbManager db=new DbManager(getContext());
+       // DbManager db=new DbManager(getContext());
         arrayList = new ArrayList<>();
         lv=view.findViewById(R.id.listview);
 
-        loaddata();
+        loadData();
 
        /* LayoutInflater inflater=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         view=inflater.inflate(R.layout.listview,null);
@@ -104,7 +103,7 @@ public class GalleryFragment extends Fragment {
 
     }
 
-    private void loaddata() {
+    private void loadData() {
         DbManager db=new DbManager(getContext());
         arrayList = db.getAllData();
         myAdapter = new MyAdapter(getContext(),arrayList);

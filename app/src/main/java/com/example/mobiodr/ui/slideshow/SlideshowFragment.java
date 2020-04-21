@@ -16,7 +16,6 @@ import androidx.fragment.app.Fragment;
 import com.example.mobiodr.Datemap;
 import com.example.mobiodr.DbManager;
 import com.example.mobiodr.ListId;
-import com.example.mobiodr.Monthprice;
 import com.example.mobiodr.Monthpricefull;
 import com.example.mobiodr.R;
 import com.github.mikephil.charting.charts.BarChart;
@@ -30,12 +29,12 @@ import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -66,16 +65,18 @@ public class SlideshowFragment extends Fragment {
         pramttv=view.findViewById(R.id.profitamt);
 
         DbManager db=new DbManager(getContext());
+        Date today=new Date();
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.MONTH, -4);
+        Date before4month = cal.getTime();
 
 
-        Date today = new Date();
-        Calendar cal = new GregorianCalendar();
-        cal.setTime(today);
-        cal.add(Calendar.DAY_OF_MONTH, -123);
-        Date today123 = cal.getTime();
+
+
+
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
-        String start = format.format(today123);
+        String start = format.format(before4month);
         String end=format.format(today);
 
         ArrayList<ListId> arraylist = db.getdata(start,end);
@@ -108,6 +109,7 @@ public class SlideshowFragment extends Fragment {
 
 
 
+/*
 
         String monthp,monthpp,monthppp;
         Calendar c = Calendar.getInstance();
@@ -143,6 +145,46 @@ public class SlideshowFragment extends Fragment {
         labels.add(monthpp);
         labels.add(monthp);
         labels.add(month);
+*/
+
+
+
+
+
+
+        Calendar beginCalendar = Calendar.getInstance();
+        Calendar finishCalendar = Calendar.getInstance();
+
+        beginCalendar.setTime(before4month);
+        finishCalendar.setTime(today);
+
+        DateFormat formaterYd = new SimpleDateFormat("MMMM");
+        ArrayList months=new ArrayList();
+
+        while (beginCalendar.before(finishCalendar)) {
+
+            String date = formaterYd.format(beginCalendar.getTime());
+            // Add One Month to get next Month
+            beginCalendar.add(Calendar.MONTH, 1);
+            months.add(0,date);
+
+        }
+        String date = formaterYd.format(finishCalendar.getTime());
+        months.add(0,date);
+
+        ArrayList<String> labels=new ArrayList<String>();
+        int ii;
+        for (ii=0;ii<4;ii++){
+            months.get(ii);
+            labels.add(0, (String) months.get(ii));
+
+        }
+
+
+
+
+
+
 
 
 

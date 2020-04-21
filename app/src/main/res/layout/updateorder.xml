@@ -147,6 +147,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/phone_model" />
 
+    <ImageButton
+        android:id="@+id/callbutton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="17dp"
+        app:layout_constraintBottom_toBottomOf="@+id/mob_no"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone_model"
+        app:srcCompat="@drawable/call2" />
+
     <TextView
         android:id="@+id/order_date_tv"
         android:layout_width="wrap_content"

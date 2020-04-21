@@ -1,8 +1,8 @@
 package com.example.mobiodr.ui.home;
 
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,12 +18,12 @@ import androidx.fragment.app.Fragment;
 
 import com.example.mobiodr.DbManager;
 import com.example.mobiodr.R;
-import com.example.mobiodr.UpdateOrder;
-import com.example.mobiodr.ui.slideshow.SlideshowFragment;
+
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+
 
 public class HomeFragment extends Fragment {
 
@@ -94,6 +94,14 @@ public class HomeFragment extends Fragment {
                 }else {
                     String res = db.addrecord(name, mobno, product, color, phone, details, formattedDate);
                     Toast.makeText(getActivity(), res, Toast.LENGTH_SHORT).show();
+                    if(!mobno.equals("")){
+
+                        String smsNumber ="smsto:"+mobno;
+                        String sms ="Hi "+name+",\nYour order has been received.\n\nProduct:"+product+"\nOrder date:"+formattedDate;
+                        sendSMS(smsNumber,sms);
+
+                    }
+
                     reset();
                 }
 
@@ -132,4 +140,17 @@ public class HomeFragment extends Fragment {
 
 
     }
+
+
+    public void sendSMS(String phoneNo, String msg) {
+        try {
+            SmsManager smsManager = SmsManager.getDefault();
+            smsManager.sendTextMessage(phoneNo, null, msg, null, null);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+
+
 }

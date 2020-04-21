@@ -2,8 +2,6 @@ package com.example.mobiodr;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Layout;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Timer;
@@ -23,13 +21,13 @@ public class FlashActivity extends AppCompatActivity {
             public void run() {
                 Intent intent=new Intent(FlashActivity.this,LoginActivity.class);
                 startActivity(intent);
-                finishscreen();
+                finishScreen();
             }
         };
         Timer t =new Timer();
         t.schedule(task,1500);
     }
-    private  void finishscreen(){
+    private  void finishScreen(){
         this.finish();
     }
 }

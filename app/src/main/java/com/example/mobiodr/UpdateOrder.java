@@ -7,8 +7,9 @@ import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.TextView;
+
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -16,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class UpdateOrder extends AppCompatActivity {
     Button button1,button2;
+    ImageButton callbtn;
     ImageView imageView;
     EditText editText1,editText2,editText3,editText4,editText5,editText6,editText7,editText8,editText9;
    /* ArrayList<Order> arraylist;*/
@@ -37,7 +39,12 @@ public class UpdateOrder extends AppCompatActivity {
         String phone_model = intent.getStringExtra("phone_model");
         final String details = intent.getStringExtra("details");
         String date = intent.getStringExtra("date");
+
+
+        String phoneNumber=String.format("tel:"+mob_no);
+
         imageView=findViewById(R.id.imageView);
+        callbtn=findViewById(R.id.callbutton);
         editText1=findViewById(R.id.name);
         editText2=findViewById(R.id.product);
         editText3=findViewById(R.id.color);
@@ -50,6 +57,10 @@ public class UpdateOrder extends AppCompatActivity {
         button1=findViewById(R.id.update);
         button2=findViewById(R.id.reset);
 
+        if(mob_no.equals("")){
+            callbtn.setVisibility(View.INVISIBLE);
+
+        }
         editText1.setText(name);
         editText1.setEnabled(false);
         editText2.setText(product);
@@ -173,7 +184,16 @@ public class UpdateOrder extends AppCompatActivity {
       //  String a =order.getName();
       //  String B =order.getColor();
 
+callbtn.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent dialIntent = new Intent(Intent.ACTION_DIAL);
 
+        dialIntent.setData(Uri.parse(phoneNumber));
+        startActivity(dialIntent);
+
+    }
+});
 
 
 

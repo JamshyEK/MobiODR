@@ -5,12 +5,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
-
+    ImageView imageView;
     EditText editText1,editText2;
     Button button;
     userpass up=new userpass();
@@ -18,10 +19,22 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loginlayout);
-
+        imageView=findViewById(R.id.imageViewlog);
         editText1=findViewById(R.id.name);
         editText2=findViewById(R.id.product);
         button=findViewById(R.id.button);
+
+
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(LoginActivity.this,NavActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

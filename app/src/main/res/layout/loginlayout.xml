@@ -8,6 +8,14 @@
     tools:context=".LoginActivity">
 
     <ImageView
+        android:id="@+id/imageViewlog"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@color/background" />
+
+    <ImageView
         android:id="@+id/imageView"
         android:layout_width="183dp"
         android:layout_height="174dp"
